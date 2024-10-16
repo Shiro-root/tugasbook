@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
     const title = document.getElementById("bookFormTitle").value;
     const author = document.getElementById("bookFormAuthor").value;
-    const year = document.getElementById("bookFormYear").value;
+    const year = parseInt(document.getElementById("bookFormYear").value);
     const isComplete = document.getElementById("bookFormIsComplete").checked;
 
     const book = {
