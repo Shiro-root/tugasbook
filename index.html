@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf App</title>
+
+    <!-- Impor script kamu di sini -->
+
+    <!-- tailwind -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <!-- Lampirkan `defer` jika pemanggilan dilakukan dalam <head> -->
+    <script defer src="./main.js"></script>
+  </head>
+  <body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <header class="bg-blue-600 p-4">
+      <h1 class="text-white text-3xl font-bold text-center">Bookshelf App</h1>
+    </header>
+
+    <main class="p-6">
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-4">Cari Buku</h2>
+        <form
+          id="searchBook"
+          data-testid="searchBookForm"
+          class="bg-white p-6 rounded-lg shadow-lg"
+        >
+          <div class="mb-4">
+            <label for="searchBookTitle" class="block text-sm font-bold mb-2"
+              >Judul</label
+            >
+            <input
+              id="searchBookTitle"
+              type="text"
+              data-testid="searchBookFormTitleInput"
+              class="w-full p-2 border border-gray-300 rounded"
+            />
+          </div>
+
+          <button
+            id="searchSubmit"
+            type="submit"
+            data-testid="searchBookFormSubmitButton"
+            class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+          >
+            Cari
+          </button>
+        </form>
+      </section>
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-4">Tambah Buku Baru</h2>
+        <form
+          id="bookForm"
+          data-testid="bookForm"
+          class="bg-white p-6 rounded-lg shadow-lg"
+        >
+          <div class="mb-4">
+            <label for="bookFormTitle" class="block text-sm font-bold mb-2"
+              >Judul</label
+            >
+            <input
+              id="bookFormTitle"
+              type="text"
+              required
+              data-testid="bookFormTitleInput"
+              class="w-full p-2 border border-gray-300 rounded"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="bookFormAuthor" class="block text-sm font-bold mb-2"
+              >Penulis</label
+            >
+            <input
+              id="bookFormAuthor"
+              type="text"
+              required
+              data-testid="bookFormAuthorInput"
+              class="w-full p-2 border border-gray-300 rounded"
+            />
+          </div>
+          <div class="mb-2">
+            <label for="bookFormYear" class="block text-sm font-bold mb-2"
+              >Tahun</label
+            >
+            <input
+              id="bookFormYear"
+              type="number"
+              required
+              data-testid="bookFormYearInput"
+              class="w-full p-2 border border-gray-300 rounded"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="bookFormIsComplete" class="block text-sm font-bold mb-2"
+              >Selesai dibaca</label
+            >
+            <input
+              id="bookFormIsComplete"
+              type="checkbox"
+              data-testid="bookFormIsCompleteCheckbox"
+              class="mr-2 leading-tight"
+            />
+          </div>
+          <button
+            id="bookFormSubmit"
+            type="submit"
+            data-testid="bookFormSubmitButton"
+            class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+          >
+            Masukkan Buku ke rak <span>Belum selesai dibaca</span>
+          </button>
+        </form>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-4">Belum selesai dibaca</h2>
+
+        <div
+          id="incompleteBookList"
+          data-testid="incompleteBookList"
+          class="space-y-4"
+        >
+          <!-- 
+            Ini adalah struktur HTML untuk masing-masing buku.
+            Pastikan susunan elemen beserta atribut data-testid menyesuaikan seperti contoh ini.
+          -->
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold mb-4">Selesai dibaca</h2>
+
+        <div
+          id="completeBookList"
+          data-testid="completeBookList"
+          class="space-y-4"
+        >
+          <!-- 
+            Ini adalah struktur HTML untuk masing-masing buku.
+            Pastikan susunan elemen beserta atribut data-testid menyesuaikan seperti contoh ini.
+          -->
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
